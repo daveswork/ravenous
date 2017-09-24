@@ -1,4 +1,4 @@
-import Reach from 'react';
+import React from 'react';
 import './SearchBar.css';
 
 const sortByOptions = {
@@ -9,13 +9,11 @@ const sortByOptions = {
 
 class SearchBar extends React.Component{
   renderSortByOptions(){
-
-  return Object.keys(sortByOptions).map((sortByOption)=>{
-    sortByOptionValue = sortByOption;
+    return Object.keys(sortByOptions).map((sortByOption)=>{
+    let sortByOptionValue = sortByOptions[sortByOption];
     return <li key={sortByOptionValue}>{sortByOption}</li>;
-
   });
-  }
+}
 
   render(){
     return (
@@ -30,7 +28,7 @@ class SearchBar extends React.Component{
           <input placeholder="Where?" />
         </div>
         <div className="SearchBar-submit">
-          <a>Let's Go</a>
+          <a>Lets Go</a>
         </div>
       </div>
     );
